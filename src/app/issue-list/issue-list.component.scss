@@ -1,0 +1,101 @@
+@import 'src/scss/variables/colors';
+
+.list-container {
+    min-width: 280px;
+    margin: 20px;
+    
+    mat-card-title {
+        border-bottom: 1px solid $ui-04;
+        margin-bottom: 18px;
+        padding-bottom: 9px;
+    
+        .header-actions {
+            align-items: center;
+            display: inline-flex;
+            flex-wrap: wrap;
+        }
+    
+        .search-input {
+            font-size: 14px;
+            margin-right: 27px;
+    
+            .mat-icon {
+                padding-left: 5px;
+                position: relative;
+                top: -2px;
+                right: 0;
+            }
+        }
+    }
+}
+
+
+mat-header-row {
+    border-bottom-color: $ui-04;
+    min-height: 3em;
+
+    mat-header-cell {
+        color: $ui-02;
+        font-weight: 400;
+
+        &:last-child {
+            justify-content: flex-end;
+        }
+
+        &:first-child {
+            justify-content: flex-start;
+        }
+    }
+}
+
+mat-row {
+    border-bottom: 0;
+    min-height: 40px;
+    padding: 4px 0;
+
+    &:nth-child(odd) {
+        background-color: $ui-06;
+    }
+
+    a {
+        color: $blue;
+        text-decoration: none;
+    }
+
+    mat-cell {
+        outline: none;
+
+        &:last-child {
+            justify-content: flex-end;
+        }
+
+        &:first-child {
+            justify-content: flex-start;
+        }
+    }
+
+    &:hover,
+    &:focus-within,
+    &.active {
+        background-color: $blue-light;
+    }
+}
+
+
+.mat-column-id {
+    box-sizing: border-box;
+    flex-basis: 20px;
+    @media (max-width: 659px) {
+        display: none;
+    }
+}
+
+.mat-column-title {
+    box-sizing: border-box;
+    flex-basis: 50%;
+}
+
+.mat-column-state {
+    box-sizing: border-box;
+    flex-basis: 40px;
+}

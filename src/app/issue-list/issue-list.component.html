@@ -1,0 +1,39 @@
+<mat-card class="list-container">
+  <mat-card-title class="composed-card-title">
+    <h2>Issues</h2>
+    <div class="header-actions">
+      <form>
+        <mat-form-field appearance="fill" class="search-input">
+          <mat-label>Github repo name</mat-label>
+          <input matInput type="text" placeholder="Ex. mojombo/bert" [formControl]="searchControl">
+          <mat-icon aria-label="search" matSuffix>search</mat-icon>
+          <mat-error *ngIf="searchControl.hasError('required')">Please type a repo name</mat-error>
+        </mat-form-field>
+        <button mat-flat-button color="primary" (click)="searchRepo($event)">
+          <span>Search</span>
+        </button>
+      </form>
+    </div>
+  </mat-card-title>
+  <mat-card-content>
+    <mat-table [dataSource]="issueListDataSource">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.title}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="state">
+        <mat-header-cell *matHeaderCellDef>State</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.state}}</mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true">
+      </mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns">
+      </mat-row>
+    </mat-table>
+    <mat-paginator pageSize="7" hidePageSize="true" aria-label="select page of issues"></mat-paginator>
+  </mat-card-content>
+</mat-card>

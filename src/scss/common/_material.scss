@@ -1,0 +1,120 @@
+@import 'src/scss/variables/colors';
+
+// Material Form Fields -- Init
+mat-form-field {
+    .mat-form-field-infix {
+        width: auto;
+    }
+
+    .mat-form-field-suffix {
+        align-self: center;
+        .mat-icon {
+            color: $ui-02;
+        }
+    }
+
+    &.mat-focused,
+    &.mat-form-field-invalid {
+        &.mat-form-field-appearance-fill {
+            .mat-form-field-flex {
+                background-color: $ui-05;
+            }
+        }
+    }
+}
+
+// Material Form Fields -- End
+
+// Material Cards -- Init
+
+mat-card {
+    &.mat-card {
+        border-radius: 0;
+        margin: 0 auto;
+        max-width: calc(1400px - 64px);
+        padding: 18px 28px;
+    }
+}
+
+mat-card-title {
+    &.mat-card-title {
+        font-size: 18px;
+
+        h2 {
+            flex: 1 0 auto;
+            margin: .25em 0;
+        }
+    }
+
+    &.composed-card-title {
+        align-content: center;
+        align-items: center;
+        display: inline-flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        width: 100%;
+
+        span {
+            flex: 1 0 auto;
+        }
+    }
+}
+
+mat-card-content {
+    height: 100%;
+}
+
+// Material Cards -- End
+
+
+// Material Table -- Init
+
+mat-cell,
+mat-footer-cell,
+mat-header-cell {
+    padding-left: 16px !important;
+}
+
+// Material Table -- End
+
+
+// Material Paginator -- Init
+mat-paginator {
+    width: 100%;
+}
+// Material Paginator -- End
+
+
+// Material Snackbar -- Init
+
+.mat-snack-bar-container {
+    max-width: 40vw !important;
+    color: $ui-04;
+}
+
+// Material Snackbar -- End
+
+
+// Material Icons -- Init
+
+mat-icon {
+    height: 24px;
+    width: 24px;
+}
+
+// Material Icons -- End
+
+
+// Material Tooltip -- Init
+
+.mat-tooltip-panel {
+    .mat-tooltip {
+        background: $ui-02;
+        font-size: 12px;
+        padding: 2px 16px;
+        margin-bottom: 5px;
+    }
+}
+
+// Material Tooltip -- End
+
