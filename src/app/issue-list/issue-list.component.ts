@@ -24,7 +24,7 @@ export class IssueListComponent {
     private _snackBar: MatSnackBar
   ) { }
 
-  public getIssues(repoName: string) {
+  public getIssues(repoName: string): void {
     this.githubService.getIssueList(repoName).subscribe(
       (data) => {
         this.issueListDataSource = new MatTableDataSource(data);
@@ -40,7 +40,7 @@ export class IssueListComponent {
     )
   }
 
-  private openBadRequestAlert(errorMessage: string) {
+  private openBadRequestAlert(errorMessage: string): void {
     this._snackBar.open(errorMessage, '', {
       duration: 3000,
       horizontalPosition: 'center',
@@ -48,7 +48,7 @@ export class IssueListComponent {
     });
   }
 
-  public searchRepo(event: any) {
+  public searchRepo(event: any): void {
     event.preventDefault();
     this.getIssues(this.searchControl.value);
   }
